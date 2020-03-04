@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    command: python RSResponseButtonClient.py
+    restart: always
+    volumes:
+      - .:/code
+      - /sys:/sys # gpio
+    env_file:
+      - .env
